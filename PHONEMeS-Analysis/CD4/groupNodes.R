@@ -1,3 +1,5 @@
+##
+# Function to group the nodes
 groupNodes = function(sif = sif, nodesAttributes = nodesAttributes, sifName = "sif_grouped.txt", attribName = "attrib_grouped.txt"){
   
   idx = c()
@@ -79,7 +81,7 @@ groupNodes = function(sif = sif, nodesAttributes = nodesAttributes, sifName = "s
     idx1 = which(sif$Source==ss)
     idx2 = which(sif$Target==tt)
     idx = intersect(x = idx1, y = idx2)
-    sif$f50[idx] = as.character(mean(as.numeric(sif$f50[idx])))
+    sif$Weight[idx] = as.character(mean(as.numeric(sif$Weight[idx])))
     
   }
   
@@ -107,6 +109,7 @@ groupNodes = function(sif = sif, nodesAttributes = nodesAttributes, sifName = "s
 }
 
 ##
+# grouping nodes and saving resulting networks
 library(readr)
 for(ii in 1:5){
   
@@ -120,9 +123,13 @@ for(ii in 1:5){
   
 }
 
-sif1 = read_delim(paste0("cplex_exp_combined.txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
-nodesAttributes = read_delim(paste0("nodesAttributes_combined.txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
+##
+# removing redundant remaining files
+file.remove("clone0.log")
+file.remove("clone1.log")
+file.remove("clone2.log")
+file.remove("clone3.log")
+file.remove("cplex")
 file.remove("cplex_exp_combined.txt")
-
-groupNodes(sif = sif1, nodesAttributes = nodesAttributes, sifName = paste0("../../Results/PHONEMeS/CD4/cplex_grouped_combined.txt"), 
-           attribName = paste0("../../Results/PHONEMeS/CD4/attributes_grouped_cplex_combined.txt"))
+file.remove("nodesAttributes_combined.txt")
+file.remove("nodesAttributes.txt")

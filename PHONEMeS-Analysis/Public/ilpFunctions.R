@@ -1311,7 +1311,7 @@ buildNetwork <- function(experiments=experiments, data.P=data.P, bg=bg, nK = "al
 assign_tp_attributes <- function(sifList = sifList){
   
   returnSIF <- matrix(data = c("", 0, "", ""), nrow = 1, ncol = 4)
-  colnames(returnSIF) <- c("Source", "f50", "tp", "Target")
+  colnames(returnSIF) <- c("Source", "Weight", "tp", "Target")
   
   for(ii in 1:length(sifList[[1]])){
     

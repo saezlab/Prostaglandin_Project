@@ -143,7 +143,7 @@ runPHONEMeS <- function(targets.P, conditions, dataGMM, experiments, bg, nK="all
   }
   
   # write.table(resultsSIF, file = "resultsSIF.txt", quote = FALSE, row.names = FALSE, sep = "\t")
-  colnames(resultsSIF1) <- c("Source", "f50", "Target")
+  colnames(resultsSIF1) <- c("Source", "Weight", "Target")
   
   return(resultsSIF1)
   
