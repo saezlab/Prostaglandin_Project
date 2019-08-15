@@ -44,7 +44,7 @@ ep3Val <- CD4[, 16:20]
 ep4Val <- CD4[, 21:25]
 pgeVal <- CD4[, 26:30]
 
-pValThresh = 0.1
+pValThresh = 0.05
 
 ep1Score <- log2(CD4$`Student's T-test q-value EP1_CT`/pValThresh)
 
