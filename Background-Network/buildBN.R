@@ -95,7 +95,7 @@ toBind[1, 8] <- paste0(toBind[1, 2], "_R1")
 allD <- unique(rbind(allD, toBind))
 
 ##
-# GNAS <- PRKACA
+# GNAI1 <- PRKACA
 
 toBind <- matrix(data = , nrow = 1, ncol = 8)
 colnames(toBind) <- colnames(allD)

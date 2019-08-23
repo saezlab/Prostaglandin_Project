@@ -111,15 +111,29 @@ groupNodes = function(sif = sif, nodesAttributes = nodesAttributes, sifName = "s
 ##
 # grouping nodes and saving resulting networks
 library(readr)
-for(ii in 1:5){
+for(ii in 1:6){
   
-  sif1 = read_delim(paste0("CD8_cplex_exp", ii, ".txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
-  nodesAttributes = read_delim(paste0("nodesAttributes_", ii, ".txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
-  file.remove(paste0("CD8_cplex_exp", ii, ".txt"))
-  file.remove(paste0("nodesAttributes_", ii, ".txt"))
-  
-  groupNodes(sif = sif1, nodesAttributes = nodesAttributes, sifName = paste0("../../Results/PHONEMeS/CD8/cplex_grouped_", ii, ".txt"), 
-             attribName = paste0("../../Results/PHONEMeS/CD8/attributes_grouped_cplex_", ii, ".txt"))
+  if(ii%in%1:5){
+    
+    sif1 = read_delim(paste0("CD8_cplex_exp", ii, ".txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
+    nodesAttributes = read_delim(paste0("nodesAttributes_", ii, ".txt"), "\t", escape_double = FALSE, trim_ws = TRUE)
+    file.remove(paste0("CD8_cplex_exp", ii, ".txt"))
+    file.remove(paste0("nodesAttributes_", ii, ".txt"))
+    
+    groupNodes(sif = sif1, nodesAttributes = nodesAttributes, sifName = paste0("../../Results/PHONEMeS/CD8/cplex_grouped_", ii, ".txt"), 
+               attribName = paste0("../../Results/PHONEMeS/CD8/attributes_grouped_cplex_", ii, ".txt"))
+    
+  } else {
+    
+    sif1 = read_delim("cplex_exp_combined.txt", "\t", escape_double = FALSE, trim_ws = TRUE)
+    nodesAttributes = read_delim("nodesAttributes_combined.txt", "\t", escape_double = FALSE, trim_ws = TRUE)
+    file.remove("cplex_exp_combined.txt")
+    file.remove("nodesAttributes_combined.txt")
+    
+    groupNodes(sif = sif1, nodesAttributes = nodesAttributes, sifName = "../../Results/PHONEMeS/CD8/cplex_grouped_combined.txt", 
+               attribName = "../../Results/PHONEMeS/CD8/attributes_grouped_combined.txt")
+    
+  }
   
 }
 
@@ -130,6 +144,4 @@ file.remove("clone1.log")
 file.remove("clone2.log")
 file.remove("clone3.log")
 file.remove("cplex")
-file.remove("cplex_exp_combined.txt")
-file.remove("nodesAttributes_combined.txt")
 file.remove("nodesAttributes.txt")
