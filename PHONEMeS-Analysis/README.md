@@ -4,3 +4,8 @@ This directory contains scripts necessary to perform the PHONEMeS analysis. PHON
 
 ## Steps to run the analysis
 
+Separate analysis are run for the two different cell types: [*CD4*](https://github.com/saezlab/Prostaglandin_Project/tree/master/PHONEMeS-Analysis/CD4) and [*CD8*](https://github.com/saezlab/Prostaglandin_Project/tree/master/PHONEMeS-Analysis/CD8). On [*/CD4*](https://github.com/saezlab/Prostaglandin_Project/tree/master/PHONEMeS-Analysis/CD4) and [*/CD8*](https://github.com/saezlab/Prostaglandin_Project/tree/master/PHONEMeS-Analysis/CD8) are expalined the details of the analysis.
+
+## Public directory
+
+The [*/Public*](https://github.com/saezlab/Prostaglandin_Project/tree/master/PHONEMeS-Analysis/Public) directory contains all the finctions where the ILP problem is formulated and which are needed to run the analysis.
