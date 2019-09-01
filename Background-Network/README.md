@@ -19,4 +19,4 @@ Below we describe the main resources used to build our background network.
 
 ## Side Note
 
-+ We have used the Omnipath version of August 2019 to build our background network.
++ We have used the Omnipath version of July 2019 to build our background network.
